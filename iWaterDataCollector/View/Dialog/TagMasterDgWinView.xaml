@@ -1,0 +1,57 @@
+﻿<mah:MetroWindow x:Class="iWaterDataCollector.View.Dialog.TagMasterDgWinView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:iWaterDataCollector.View.Dialog"
+      xmlns:uc="clr-namespace:iWaterDataCollector.View.UserControl"
+      xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+      xmlns:mahIcons="http://metro.mahapps.com/winfx/xaml/iconpacks"
+      xmlns:converter="clr-namespace:iWaterDataCollector.Converter"
+      mc:Ignorable="d" FontSize="{StaticResource CommonFontSize}" Width="850" Height="450">
+
+    <mah:MetroWindow.Resources>
+        <converter:VisibilityConverter x:Key="VisibilityConverter"/>
+    </mah:MetroWindow.Resources>
+    
+    <!-- Main Icon 설정부-->
+    <mah:MetroWindow.IconTemplate>
+        <DataTemplate>
+            <mahIcons:PackIconMaterial Kind="TableEdit" Width="15" Height="15" Foreground="{DynamicResource MahApps.Brushes.IdealForeground}" VerticalAlignment="Center" HorizontalAlignment="Center" />
+        </DataTemplate>
+    </mah:MetroWindow.IconTemplate>
+    <!-- Main Title 입력부 -->
+    <mah:MetroWindow.TitleTemplate>
+        <DataTemplate>
+            <DockPanel VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="8,0,0,0">
+                <TextBlock DockPanel.Dock="Left" Text="iWaterDataCollector Tag Manager"
+                   TextTrimming="CharacterEllipsis"
+                   VerticalAlignment="Center"
+                   Margin="0,3"
+                   FontSize="{DynamicResource TitleBarFontSize}"/>
+                <TextBlock Text="{DynamicResource Version}"
+                   TextTrimming="CharacterEllipsis"
+                   HorizontalAlignment="Right"
+                   VerticalAlignment="Center"
+                   Margin="5, 3"
+                   FontSize="{DynamicResource DefaultBarFontSize}" 
+                   FontFamily="{DynamicResource DefaultFont}"/>
+            </DockPanel>
+        </DataTemplate>
+    </mah:MetroWindow.TitleTemplate>
+
+    <Border Margin="0 5 0 0">
+        <mah:MetroTabControl mah:TabControlHelper.Underlined="TabPanel" mah:HeaderedControlHelper.HeaderFontSize="18">
+            <mah:MetroTabItem  Header="Historian Tag" VerticalAlignment="Top">
+                <uc:PDBTagCheckerUCView HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+            </mah:MetroTabItem>
+            <mah:MetroTabItem Header="Kafka to PDB Tag">
+                <uc:KafkaTagCheckerUCView HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+            </mah:MetroTabItem>
+            <mah:MetroTabItem Header="Remote Server Tag" Visibility="{Binding IsVisible, Converter={StaticResource VisibilityConverter}}">
+                <uc:RemoteTagRegisterUCView HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+            </mah:MetroTabItem>
+        </mah:MetroTabControl>
+    </Border>
+
+</mah:MetroWindow>

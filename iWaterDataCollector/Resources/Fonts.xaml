@@ -1,0 +1,10 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:System="clr-namespace:System;assembly=mscorlib">
+
+    <FontFamily x:Key="DefaultFont">Malgun Gothic</FontFamily>
+
+    <System:Double x:Key="DefaultBarFontSize">12</System:Double>
+    <System:Double x:Key="TitleBarFontSize">15</System:Double>
+    <System:Double x:Key="HeaderFontSize">20</System:Double>
+</ResourceDictionary>

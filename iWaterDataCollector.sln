@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36221.1 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iWaterDataCollector", "iWaterDataCollector\iWaterDataCollector.csproj", "{2141A2C1-C611-4B79-A7C1-FF17265FD9DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iWaterDataCollector.Net", "iWaterDataCollector.Net\iWaterDataCollector.Net.csproj", "{BE53EF28-A9E2-43C6-AE7C-237BFEB2B11E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iWaterDataCollector.iFixAdapter", "iWaterDataCollector.iFixAdapter\iWaterDataCollector.iFixAdapter.csproj", "{623542BF-8183-4EB6-827E-7C233C647595}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iWaterDataCollector.Model", "iWaterDataCollector.Model\iWaterDataCollector.Model.csproj", "{660A1DD1-8CCE-4E16-990F-C75D07253E28}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iWaterDataCollector.Global", "iWaterDataCollector.Global\iWaterDataCollector.Global.csproj", "{CFC07206-6CDE-4B9F-90E3-CD67E80219D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iWaterDataCollector.INI", "iWaterDataCollector.INI\iWaterDataCollector.INI.csproj", "{B6F82B14-A8EB-4465-BD9A-BD7E6ED6BCE5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2141A2C1-C611-4B79-A7C1-FF17265FD9DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2141A2C1-C611-4B79-A7C1-FF17265FD9DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2141A2C1-C611-4B79-A7C1-FF17265FD9DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2141A2C1-C611-4B79-A7C1-FF17265FD9DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE53EF28-A9E2-43C6-AE7C-237BFEB2B11E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE53EF28-A9E2-43C6-AE7C-237BFEB2B11E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE53EF28-A9E2-43C6-AE7C-237BFEB2B11E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE53EF28-A9E2-43C6-AE7C-237BFEB2B11E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{623542BF-8183-4EB6-827E-7C233C647595}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{623542BF-8183-4EB6-827E-7C233C647595}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{623542BF-8183-4EB6-827E-7C233C647595}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{623542BF-8183-4EB6-827E-7C233C647595}.Release|Any CPU.Build.0 = Release|Any CPU
+		{660A1DD1-8CCE-4E16-990F-C75D07253E28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{660A1DD1-8CCE-4E16-990F-C75D07253E28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{660A1DD1-8CCE-4E16-990F-C75D07253E28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{660A1DD1-8CCE-4E16-990F-C75D07253E28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFC07206-6CDE-4B9F-90E3-CD67E80219D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFC07206-6CDE-4B9F-90E3-CD67E80219D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFC07206-6CDE-4B9F-90E3-CD67E80219D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFC07206-6CDE-4B9F-90E3-CD67E80219D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6F82B14-A8EB-4465-BD9A-BD7E6ED6BCE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6F82B14-A8EB-4465-BD9A-BD7E6ED6BCE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6F82B14-A8EB-4465-BD9A-BD7E6ED6BCE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6F82B14-A8EB-4465-BD9A-BD7E6ED6BCE5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8AE980BA-D53E-44F5-A6FE-8C5E2DA9EA45}
+	EndGlobalSection
+EndGlobal

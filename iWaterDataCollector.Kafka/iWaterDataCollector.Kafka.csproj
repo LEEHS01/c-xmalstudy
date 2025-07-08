@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\librdkafka.redist.2.1.0\build\librdkafka.redist.props" Condition="Exists('..\packages\librdkafka.redist.2.1.0\build\librdkafka.redist.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{583EF0ED-35A2-4BD3-9BAA-A5AB66922716}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>iWaterDataCollector.Kafka</RootNamespace>
+    <AssemblyName>iWaterDataCollector.Kafka</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;NETFRAMEWORK;NET462;DETAIL_LOG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\bin\</OutputPath>
+    <DefineConstants>NETFRAMEWORK;NET462</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=2.0.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.15\lib\net45\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Impl\MonoSupport.cs" />
+    <Compile Include="Internal\Extensions\TimeSpanExtensions.cs" />
+    <Compile Include="Internal\Ignore.cs" />
+    <Compile Include="Internal\Null.cs" />
+    <Compile Include="Consumer.cs" />
+    <Compile Include="Impl\IDeserializer.cs" />
+    <Compile Include="Impl\IConsumer.cs" />
+    <Compile Include="System\AccessControlEntryFilter.cs" />
+    <Compile Include="System\AclBindingFilter.cs" />
+    <Compile Include="Exceptions\ConsumeResult.cs" />
+    <Compile Include="Exceptions\CommittedOffsets.cs" />
+    <Compile Include="System\CreateAclsOptions.cs" />
+    <Compile Include="System\DeleteAclsOptions.cs" />
+    <Compile Include="System\DescribeAclsOptions.cs" />
+    <Compile Include="System\Deserializers.cs" />
+    <Compile Include="System\Header.cs" />
+    <Compile Include="System\LogLevelType.cs" />
+    <Compile Include="System\LogMessage.cs" />
+    <Compile Include="System\Message.cs" />
+    <Compile Include="System\MessageComponentType.cs" />
+    <Compile Include="System\MessageMetadata.cs" />
+    <Compile Include="System\Acks.cs" />
+    <Compile Include="System\AutoOffsetReset.cs" />
+    <Compile Include="System\BrokerAddressFamily.cs" />
+    <Compile Include="System\ClientConfig.cs" />
+    <Compile Include="Exceptions\ConsumeException.cs" />
+    <Compile Include="Common\Headers.cs" />
+    <Compile Include="System\IsolationLevel.cs" />
+    <Compile Include="Exceptions\MessageNullException.cs" />
+    <Compile Include="System\PartitionAssignmentStrategy.cs" />
+    <Compile Include="System\SaslMechanism.cs" />
+    <Compile Include="System\SaslOauthbearerMethod.cs" />
+    <Compile Include="System\SecurityProtocol.cs" />
+    <Compile Include="System\SerializationContext.cs" />
+    <Compile Include="System\SslEndpointIdentificationAlgorithm.cs" />
+    <Compile Include="System\TimestampType.cs" />
+    <Compile Include="Impl\IConsumerGroupMetadata.cs" />
+    <Compile Include="Impl\Offset.cs" />
+    <Compile Include="Internal\Extensions\DictionaryExtensions.cs" />
+    <Compile Include="Internal\Extensions\StringExtensions.cs" />
+    <Compile Include="System\AccessControlEntry.cs" />
+    <Compile Include="System\AclBinding.cs" />
+    <Compile Include="System\AlterConfigsOptions.cs" />
+    <Compile Include="System\ConfigEntry.cs" />
+    <Compile Include="System\ConfigResource.cs" />
+    <Compile Include="System\CreatePartitionsOptions.cs" />
+    <Compile Include="System\CreateTopicsOptions.cs" />
+    <Compile Include="System\DeleteConsumerGroupOffsetsOptions.cs" />
+    <Compile Include="System\DeleteGroupsOptions.cs" />
+    <Compile Include="System\DeleteRecordsOptions.cs" />
+    <Compile Include="System\DeleteTopicsOptions.cs" />
+    <Compile Include="System\DescribeConfigsOptions.cs" />
+    <Compile Include="System\GroupInfo.cs" />
+    <Compile Include="System\GroupMemberInfo.cs" />
+    <Compile Include="System\PartitionsSpecification.cs" />
+    <Compile Include="System\ResourcePattern.cs" />
+    <Compile Include="System\ResourcePatternFilter.cs" />
+    <Compile Include="Exceptions\TopicPartitionError.cs" />
+    <Compile Include="System\TopicSpecification.cs" />
+    <Compile Include="System\Config.cs" />
+    <Compile Include="System\ConfigPropertyNames.cs" />
+    <Compile Include="System\Timestamp.cs" />
+    <Compile Include="System\Partition.cs" />
+    <Compile Include="Common\Metadata.cs" />
+    <Compile Include="System\AclOperation.cs" />
+    <Compile Include="System\AclPermissionType.cs" />
+    <Compile Include="System\ConfigSource.cs" />
+    <Compile Include="Exceptions\ErrorCode.cs" />
+    <Compile Include="System\PersistenceStatus.cs" />
+    <Compile Include="System\ResourcePatternType.cs" />
+    <Compile Include="System\ResourceType.cs" />
+    <Compile Include="System\SyslogLevel.cs" />
+    <Compile Include="Impl\Handler\Handle.cs" />
+    <Compile Include="Impl\Handler\SafeKafkaHandle.cs" />
+    <Compile Include="Impl\Handler\SafeTopicConfigHandle.cs" />
+    <Compile Include="Impl\Handler\SafeTopicHandle.cs" />
+    <Compile Include="Impl\IClient.cs" />
+    <Compile Include="Impl\IHeader.cs" />
+    <Compile Include="Impl\Library.cs" />
+    <Compile Include="Impl\Librdkafka.cs" />
+    <Compile Include="Impl\Handler\SafeConfigHandle.cs" />
+    <Compile Include="Impl\Handler\SafeHandleZeroIsInvalid.cs" />
+    <Compile Include="Impl\Metadata.cs" />
+    <Compile Include="Impl\NativeMethods\NativeMethods.cs" />
+    <Compile Include="Impl\NativeMethods\NativeMethods_Alpine.cs" />
+    <Compile Include="Impl\NativeMethods\NativeMethods_Centos6.cs" />
+    <Compile Include="Impl\NativeMethods\NativeMethods_Centos7.cs" />
+    <Compile Include="Impl\PlatformApis.cs" />
+    <Compile Include="Internal\Util.cs" />
+    <Compile Include="System\BrokerMetadata.cs" />
+    <Compile Include="System\PartitionMetadata.cs" />
+    <Compile Include="System\TopicMetadata.cs" />
+    <Compile Include="System\TopicPartitionOffset.cs" />
+    <Compile Include="System\TopicPartition.cs" />
+    <Compile Include="System\WatermarkOffsets.cs" />
+    <Compile Include="System\TopicPartitionTimestamp.cs" />
+    <Compile Include="Exceptions\Error.cs" />
+    <Compile Include="Consume.cs" />
+    <Compile Include="ConsumerBuilder.cs" />
+    <Compile Include="ConsumerConfig.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Exceptions\KafkaException.cs" />
+    <Compile Include="Exceptions\KafkaRetriableException.cs" />
+    <Compile Include="Exceptions\KafkaTxnRequiresAbortException.cs" />
+    <Compile Include="Exceptions\TopicPartitionException.cs" />
+    <Compile Include="Exceptions\TopicPartitionOffsetError.cs" />
+    <Compile Include="Exceptions\TopicPartitionOffsetException.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\iWaterDataCollector.Global\iWaterDataCollector.Global.csproj">
+      <Project>{cfc07206-6cde-4b9f-90e3-cd67e80219d6}</Project>
+      <Name>iWaterDataCollector.Global</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>이 프로젝트는 이 컴퓨터에 없는 NuGet 패키지를 참조합니다. 해당 패키지를 다운로드하려면 NuGet 패키지 복원을 사용하십시오. 자세한 내용은 http://go.microsoft.com/fwlink/?LinkID=322105를 참조하십시오. 누락된 파일은 {0}입니다.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\librdkafka.redist.2.1.0\build\librdkafka.redist.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\librdkafka.redist.2.1.0\build\librdkafka.redist.props'))" />
+  </Target>
+</Project>

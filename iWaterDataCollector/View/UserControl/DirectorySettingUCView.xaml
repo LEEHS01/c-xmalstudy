@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="iWaterDataCollector.View.UserControl.DirectorySettingUCView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"             
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      mc:Ignorable="d">
+
+    <Border HorizontalAlignment="Left" Width="550" Margin="8 20">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Row="0" Grid.Column="0" Content="Default Path" FontSize="12" Margin="0 0 10 0" HorizontalContentAlignment="Right"/>
+            <Label Grid.Row="1" Grid.Column="0" Content="PDB Tag Path" FontSize="12" Margin="0 0 10 0" HorizontalContentAlignment="Right"/>
+            <Label Grid.Row="2" Grid.Column="0" Content="Kafka Tag Path" FontSize="12" Margin="0 0 10 0" HorizontalContentAlignment="Right"/>
+
+            <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Directory.Default}" Height="26" Margin="10 0 8 0" mah:TextBoxHelper.ClearTextButton="False" Style="{StaticResource ClearTextBoxStyle}"/>
+            <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Directory.PDB}" Height="26" Margin="10 0 8 0" mah:TextBoxHelper.ClearTextButton="False" Style="{StaticResource ClearTextBoxStyle}"/>
+            <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Directory.Kafka}" Height="26" Margin="10 0 8 0" mah:TextBoxHelper.ClearTextButton="False" Style="{StaticResource ClearTextBoxStyle}"/>
+
+            <Button Grid.Row="0" Grid.Column="2" Command="{Binding Command}" CommandParameter="Default" Style="{StaticResource IconButtonStyle}"/>
+            <Button Grid.Row="1" Grid.Column="2" Command="{Binding Command}" CommandParameter="PDB" Style="{StaticResource IconButtonStyle}"/>
+            <Button Grid.Row="2" Grid.Column="2" Command="{Binding Command}" CommandParameter="Kafka" Style="{StaticResource IconButtonStyle}"/>
+        </Grid>
+    </Border>
+</UserControl>
